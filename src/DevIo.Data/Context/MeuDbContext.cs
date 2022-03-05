@@ -5,10 +5,7 @@ namespace DevIo.Data.Context
 {
     public class MeuDbContext : DbContext
     {
-        public MeuDbContext(DbContextOptions options) : base(options)
-        {
-
-        }
+        public MeuDbContext(DbContextOptions options) : base(options){}
 
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Endereco> Enderecos { get; set; }
@@ -17,8 +14,6 @@ namespace DevIo.Data.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(MeuDbContext).Assembly);
-
-            
 
             base.OnModelCreating(modelBuilder);
         }
